@@ -1,2 +1,1 @@
-color: #E0003C !important;
-font-size: 2rem;
+<link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
