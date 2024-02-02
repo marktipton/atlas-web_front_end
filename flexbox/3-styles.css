@@ -384,6 +384,12 @@
     flex-direction: row-reverse;
   }
 
+  /* Section SERVICES ============================= */
+
+  .section-services .row {
+    flex-wrap: wrap;
+  }
+
   /*** 4. CARD ***/
 
   /* Card (all styles)
@@ -477,10 +483,6 @@
     text-decoration: none;
     transition-duration: 0.3s;
     transition-property: color, background-color;
-  }
-
-  .section-services .row {
-    flex-wrap: wrap;
   }
 
   /* Card TESTIMONIAL
