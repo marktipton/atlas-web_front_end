@@ -636,5 +636,18 @@
     ============================= */
 
   .tag-list {
+    padding: 0;
+    list-style: none;
+  }
 
+  .tag-list li {
+    display: inline;
+  }
+
+  .tag-list li::after {
+    content: ", ";
+  }
+
+  .tag-list li::after:last-child {
+    content: "";
   }
