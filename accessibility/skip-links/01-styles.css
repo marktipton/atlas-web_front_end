@@ -195,10 +195,10 @@
   }
 
   .skip-link {
-    background-color: var(--color-black);
+    background: var(--color-black);
     color: var(--color-white);
     left: 0;
-    pad: .7rem;
+    padding: .7rem;
     position: fixed;
     opacity: 0;
     top: 0;
