@@ -13,11 +13,11 @@
     </head>
     <body>
         <div class="container-lg p-5">
-            <div>
-                <div class="card mt-4">
+            <div class="row">
+                <div class="card mt-4 col-md">
                     <div>
                         <div class="card-header">Coding</div>
-                        <img src="https://via.placeholder.com/450x200" />
+                        <img src="https://via.placeholder.com/450x200" class="card-img-top"/>
                         <div class="card-body">
                             <h5 class="card-title">HTML</h5>
                             <p class="card-text">Hypertext Markup Language (HTML) is the standard markup language for documents designed to be displayed in a web browser.</p>
@@ -26,10 +26,10 @@
                         <div class="card-footer">40h</div>
                     </div>
                 </div>
-                <div class="card mt-4">
+                <div class="card mt-4 col-md">
                     <div>
                         <div class="card-header">Coding</div>
-                        <img src="https://via.placeholder.com/450x200" />
+                        <img src="https://via.placeholder.com/450x200" class="card-img-top"/>
                         <div class="card-body">
                             <h5 class="card-title">CSS</h5>
                             <p class="card-text">Cascading Style Sheets (CSS) is a style sheet language used for describing the presentation of a document written in a markup language like HTML.</p>
@@ -38,10 +38,10 @@
                         <div class="card-footer">35h</div>
                     </div>
                 </div>
-                <div class="card mt-4">
+                <div class="card mt-4 col-md">
                     <div>
                         <div class="card-header">Coding</div>
-                        <img src="https://via.placeholder.com/450x200" />
+                        <img src="https://via.placeholder.com/450x200" class="card-img-top"/>
                         <div class="card-body">
                             <h5 class="card-title">Javascript</h5>
                             <p class="card-text">JavaScript, often abbreviated as JS, is a programming language that conforms to the ECMAScript specification.</p>
@@ -54,12 +54,12 @@
         </div>
 
         <!-- Modal -->
-        <div id="playModal" tabindex="-1" role="dialog" aria-labelledby="playModal" aria-hidden="true" class="container center-container">
+        <div id="playModal" tabindex="-1" role="dialog" aria-labelledby="playModal" aria-hidden="true" class="modal container center-container">
             <div role="document" class="text-center">
                 <div>
                     <div>
                         <h5 id="exampleModalLabel">Play with CodePen</h5>
-                        <button type="button" data-dismiss="modal" aria-label="Close">
+                        <button type="button" data-dismiss="modal" aria-label="Close" class="btn">
                             <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
@@ -93,7 +93,7 @@
                                 </div>
                             </div>
                             <div>
-                                <button type="submit">Connect</button>
+                                <button type="submit" class="btn btn-danger">Connect</button>
                             </div>
                         </form>
                     </div>
