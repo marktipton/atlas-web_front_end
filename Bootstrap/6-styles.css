@@ -2,3 +2,15 @@
   background-color: #E0003C;
   border-color: #E0003C;
 }
+
+.btn-primary:hover,
+.btn-primary:focus,
+.btn-primary:active {
+  background-color: #BC1340;
+  border: #BC1340;
+}
+
+.btn-outline-primary {
+  color: #E0003C;
+  border-color: #E0003C;
+}
