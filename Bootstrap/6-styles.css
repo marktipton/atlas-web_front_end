@@ -24,3 +24,17 @@ a:focus {
   color: #E0003C;
   text-decoration: none;
 }
+
+.card,
+.card-header,
+.card-footer {
+  /* background-color: #E0003C; */
+  border-color: #E0003C;
+  border-radius: 1rem;
+}
+
+.card-header {
+  color: white;
+  background-color: #E0003C;
+  border-radius: 1rem;
+}
