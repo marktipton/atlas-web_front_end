@@ -17,6 +17,10 @@ function main() {
 
   const addButton = document.createElement('button');
 
+  const welcomeP = document.createElement('p');
+  welcomeP.textContent = 'Welcome Holberton!';
+  document.body.appendChild(welcomeP);
+
   addButton.textContent = 'Spooky';
   addButton.addEventListener('click', function() {
     spooky;
