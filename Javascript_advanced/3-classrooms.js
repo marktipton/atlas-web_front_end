@@ -7,14 +7,11 @@ function createClassRoom(numberOfStudents) {
 
   const students = [];
 
-  let i = 0;
-  for (; i <= numberOfStudents; i++) {
+  for (let i = 0; i < numberOfStudents; i++) {
 
   }
 
   students = studentSeat(i + 1);
 }
 
-let classRoom = createClassRoom();
-
-classRoom(10);
+const classRoom = createClassRoom(10);
