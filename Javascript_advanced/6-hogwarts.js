@@ -1,3 +1,5 @@
-const privateScore = 0;
+const studentHogwarts = (function () {
 
-const name = null;
+  let privateScore = 0;
+  let name = null;
+})
