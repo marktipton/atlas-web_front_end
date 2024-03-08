@@ -15,11 +15,12 @@ function main() {
   const darkMode = changeMode(12, 'bold', 'capitalize', 'black', 'white');
   const screamMode = changeMode(12, 'normal', 'lowercase', 'white', 'black');
 
-  const addButton = document.createElement('button');
 
   const welcomeP = document.createElement('p');
   welcomeP.textContent = 'Welcome Holberton!';
   document.body.appendChild(welcomeP);
+
+  const addButton = document.createElement('button');
 
   addButton.textContent = 'Spooky';
   addButton.addEventListener('click', function() {
