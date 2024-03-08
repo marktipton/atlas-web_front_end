@@ -9,5 +9,14 @@ const studentHogwarts = (function () {
 
   this.setName = function(newName) {
     name = newName;
+    return (name);
+  }
+
+  this.rewardStudent = changeScoreBy(1);
+
+  this.penalizeStudent = changeScoreBy(-1);
+
+  this.getScore = function() {
+    return (name + ": " + privateScore);
   }
 })
