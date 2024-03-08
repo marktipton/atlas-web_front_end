@@ -6,4 +6,8 @@ const studentHogwarts = (function () {
   function changeScoreBy(points) {
     privateScore += points;
   }
+
+  this.setName = function(newName) {
+    name = newName;
+  }
 })
