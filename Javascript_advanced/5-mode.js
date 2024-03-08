@@ -11,7 +11,16 @@ function changeMode(size, weight, transform, background, color) {
 
 
 function main() {
-  return function () {
-    document.body.style.fontSize = si
-  }
+  const spooky = changeMode(9, bold, uppercase, pink, green);
+  const darkMode = changeMode(12, bold, capitalize, black, white);
+  const screamMode = changeMode(12, normal, lowercase, white, black);
+
+  const addButton = document.createElement('button');
+
+  addButton.textContent = 'Click me';
+  addButton.addEventListener('click', function() {
+    spooky;
+  });
 }
+
+main();
