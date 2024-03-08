@@ -17,9 +17,19 @@ function main() {
 
   const addButton = document.createElement('button');
 
-  addButton.textContent = 'Click me';
+  addButton.textContent = 'Spooky';
   addButton.addEventListener('click', function() {
     spooky;
+  });
+
+  addButton.textContent = 'Dark mode';
+  addButton.addEventListener('click', function() {
+    darkMode;
+  });
+
+  addButton.textContent = 'Scream mode';
+  addButton.addEventListener('click', function() {
+    screamMode;
   });
 }
 
