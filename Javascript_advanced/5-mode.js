@@ -11,9 +11,9 @@ function changeMode(size, weight, transform, background, color) {
 
 
 function main() {
-  const spooky = changeMode(9, bold, uppercase, pink, green);
-  const darkMode = changeMode(12, bold, capitalize, black, white);
-  const screamMode = changeMode(12, normal, lowercase, white, black);
+  const spooky = changeMode(9, 'bold', 'uppercase', 'pink', 'green');
+  const darkMode = changeMode(12, 'bold', 'capitalize', 'black', 'white');
+  const screamMode = changeMode(12, 'normal', 'lowercase', 'white', 'black');
 
   const addButton = document.createElement('button');
 
