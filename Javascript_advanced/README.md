@@ -1,15 +1,19 @@
 # Javascript: Scoping, Closure, Binding, and Callbacks
 
-- Lexical scoping in Javascript:
+#### Lexical scoping in Javascript:
 
-- Closure:
+-
 
-- Chaining closures:
+#### Closure:
 
-- Simulating private methods with closure:
+#### Chaining closures:
 
-- Execution stack order in Javascript:
+#### Simulating private methods with closure:
 
-- Binding:
+#### Execution stack order in Javascript:
 
-- Callbacks:
+- Stack order can be altered using the setTimeout function to set a delay and move the inner function down in the execution stack order.
+
+#### Binding:
+
+#### Callbacks:
