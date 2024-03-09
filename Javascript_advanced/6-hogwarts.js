@@ -20,5 +20,3 @@ const studentHogwarts = (function () {
     return (name + ": " + privateScore);
   }
 })
-
-const H
