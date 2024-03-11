@@ -20,21 +20,27 @@ function main() {
   welcomeP.textContent = 'Welcome Holberton!';
   document.body.appendChild(welcomeP);
 
-  const addButton = document.createElement('button');
 
-  addButton.textContent = 'Spooky';
-  addButton.addEventListener('click', function() {
+  let spookyButton = document.createElement('button');
+  spookyButton.textContent = 'Spooky';
+  spookyButton.addEventListener('click', function() {
     spooky;
+    document.body.appendChild(spookyButton);
   });
 
-  addButton.textContent = 'Dark mode';
-  addButton.addEventListener('click', function() {
+  let darkButton = document.createElement('button');
+  darkButton.textContent = 'Dark mode';
+  darkButton.addEventListener('click', function() {
     darkMode;
+    document.body.appendChild(darkButton);
   });
 
-  addButton.textContent = 'Scream mode';
-  addButton.addEventListener('click', function() {
+
+  let screamButton = document.createElement('button');
+  screamButton.textContent = 'Scream mode';
+  screamButton.addEventListener('click', function() {
     screamMode;
+    document.body.appendChild(screamButton);
   });
 }
 
