@@ -17,10 +17,17 @@ function countPrimeNumbers() {
   }
   const end = performance.now();
   const executionTime = end - start;
-  console.log(`Execution time of printing countPrimeNumbers was ${performance.now(countPrimeNumbers)} milliseconds.`);
-  return count;
+  return executionTime;
 }
+
+const totalTimeStart = performance.now();
 
 for (let i=0; i < 100; i++) {
   countPrimeNumbers();
 }
+
+const totalTimeEnd = performance.now();
+const totalTime = totalTimeEnd = totalTimeStart;
+
+console.log(`Execution time of printing countPrimeNumbers was ${totalTime} milliseconds.`);
+
