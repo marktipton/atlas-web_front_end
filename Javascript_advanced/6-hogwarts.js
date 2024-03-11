@@ -30,8 +30,14 @@ const studentHogwarts = (function () {
 let harry = studentHogwarts();
 
 harry.setName('Harry');
+harry.rewardStudent;
+harry.rewardStudent;
+harry.rewardStudent;
+harry.rewardStudent;
 
 
 let draco = studentHogwarts();
 
 draco.setName('Draco');
+draco.penalizeStudent;
+draco.penalizeStudent;
