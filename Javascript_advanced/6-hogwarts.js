@@ -26,3 +26,7 @@ const studentHogwarts = (function () {
     getScore,
   };
 });
+
+let harry = studentHogwarts();
+
+harry.setName('Harry');
