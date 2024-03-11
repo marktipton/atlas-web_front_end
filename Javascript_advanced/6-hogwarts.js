@@ -3,20 +3,21 @@ const studentHogwarts = (function () {
   let privateScore = 0;
   let name = null;
 
-  function changeScoreBy(points) {
+  const changeScoreBy (points) {
     privateScore += points;
-  }
+  };
 
-  this.setName = function(newName) {
+  const setName = function(newName) {
     name = newName;
-    return (name);
   }
 
-  this.rewardStudent = changeScoreBy(1);
+  const rewardStudent = changeScoreBy(1);
 
-  this.penalizeStudent = changeScoreBy(-1);
+  const penalizeStudent = changeScoreBy(-1);
 
-  this.getScore = function() {
+  const getScore = function() {
     return (name + ": " + privateScore);
   }
+
+
 })
