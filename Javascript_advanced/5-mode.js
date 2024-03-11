@@ -28,18 +28,14 @@ function main() {
 
   let darkButton = document.createElement('button');
   darkButton.textContent = 'Dark mode';
-  darkButton.addEventListener('click', function() {
-    darkMode;
-    document.body.appendChild(darkButton);
-  });
+  darkButton.addEventListener('click', darkMode);
+  document.body.appendChild(darkButton);
 
 
   let screamButton = document.createElement('button');
   screamButton.textContent = 'Scream mode';
-  screamButton.addEventListener('click', function() {
-    screamMode;
-    document.body.appendChild(screamButton);
-  });
+  screamButton.addEventListener('click', screamMode);
+  document.body.appendChild(screamButton);
 }
 
 main();
