@@ -19,5 +19,10 @@ const studentHogwarts = (function () {
     return (name + ": " + privateScore);
   }
 
-
-})
+  return {
+    setName,
+    rewardStudent,
+    penalizeStudent,
+    getScore,
+  };
+});
