@@ -30,3 +30,8 @@ const studentHogwarts = (function () {
 let harry = studentHogwarts();
 
 harry.setName('Harry');
+
+
+let draco = studentHogwarts();
+
+draco.setName('Draco');
