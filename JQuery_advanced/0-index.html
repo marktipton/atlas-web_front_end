@@ -11,7 +11,11 @@
         crossorigin="anonymous">
         </script>
         <script type="application/javascript">
-
+          if (window.jQuery) {
+            console.log('jQuery has been loaded correctly');
+          } else {
+            console.log('jQuery has not been loaded correctly');
+          }
         </script>
     </head>
 
