@@ -27,7 +27,7 @@ for (let i=0; i < 100; i++) {
 }
 
 const totalTimeEnd = performance.now();
-const totalTime = totalTimeEnd = totalTimeStart;
+const totalTime = totalTimeEnd - totalTimeStart;
 
 console.log(`Execution time of printing countPrimeNumbers was ${totalTime} milliseconds.`);
 
