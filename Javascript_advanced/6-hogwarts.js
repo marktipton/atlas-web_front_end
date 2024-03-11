@@ -7,15 +7,19 @@ const studentHogwarts = (function () {
     privateScore += points;
   };
 
-  const setName = function(newName) {
+  function setName(newName) {
     name = newName;
   }
 
-  const rewardStudent = changeScoreBy(1);
+  function rewardStudent() {
+    changeScoreBy(1);
+  }
 
-  const penalizeStudent = changeScoreBy(-1);
+  function penalizeStudent() {
+    changeScoreBy(-1);
+  }
 
-  const getScore = function() {
+  function getScore() {
     return (name + ": " + privateScore);
   }
 
