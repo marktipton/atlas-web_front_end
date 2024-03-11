@@ -23,10 +23,8 @@ function main() {
 
   let spookyButton = document.createElement('button');
   spookyButton.textContent = 'Spooky';
-  spookyButton.addEventListener('click', function() {
-    spooky;
-    document.body.appendChild(spookyButton);
-  });
+  spookyButton.addEventListener('click', spooky);
+  document.body.appendChild(spookyButton);
 
   let darkButton = document.createElement('button');
   darkButton.textContent = 'Dark mode';
