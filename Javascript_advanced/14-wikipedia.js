@@ -1,9 +1,7 @@
-const { default: BodyReadable } = require("undici-types/readable");
-
 function createElement (data) {
   const paragraph = document.createElement('p');
-  paragraph.textContent = '';
-  document.body.append(paragraph);
+  paragraph.textContent = data;
+  document.body.appendChild(paragraph);
 }
 
 function queryWikipedia (callback) {
@@ -14,6 +12,10 @@ function queryWikipedia (callback) {
       const responseData = JSON.parse(xhr.responseText);
       callback(null, responseData);
     }
-  }
+  };
+
+  xhr.send();
 }
+
+queryWikipedia(createElement);
 
