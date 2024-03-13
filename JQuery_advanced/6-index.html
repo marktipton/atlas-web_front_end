@@ -50,21 +50,22 @@
                 });
               }
 
-              function createForm() {
-                const input1 = $('<input type="text"></input>');
-                const input2 = $('<input type="text"></input>');
+            }
 
-                const select = $('<select>' +
-                                    '<option value="before">Before</option>' +
-                                    '<option value="after">After</option>' +
-                                  '</select>'
-                                );
+            function createForm() {
+              const input1 = $('<input type="text"></input>');
+              const input2 = $('<input type="text"></input>');
 
-                const submit = $('<input type="submit" value="Submit">');
+              const select = $('<select>' +
+                                  '<option value="before">Before</option>' +
+                                  '<option value="after">After</option>' +
+                                '</select>'
+                              );
+
+              const submit = $('<input type="submit" value="Submit">');
 
 
-                $('body').prepend(input1, input2, select, submit);
-              }
+              $('body').prepend(input1, input2, select, submit);
 
             }
 
