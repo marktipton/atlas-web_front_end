@@ -25,7 +25,16 @@
               $('table').append('<tbody></tbody')
             }
 
+            function addNewMember(firstName, lastName) {
+              $('tbody').append('<tr></tr>');
+              $('tbody tr:last').append('<td></td>,<td></td>,<td></td>');
+              $('tbody tr:last td:eq(0)').text(firstName);
+              $('tbody tr:last td:eq(1)').text(lastName);
+
+            }
+
             createFamilyTree();
+            addNewMember('obiscoo', 'badoobee');
           });
         </script>
     </head>
