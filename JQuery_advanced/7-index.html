@@ -13,13 +13,18 @@
         <script type="application/javascript">
           $(document).ready(function() {
             function createSearchForm() {
-              $('body').append('<input type="text">','<input type="submit">','<ul></ul>');
+              const submit = $('<input type="submit">');
+              $('body').append('<input type="text">', submit,'<ul></ul>');
             }
 
             function addNewArticle(id, title, snippet) {
               $('body ul').append('<li></li>');
-              $('body ul li').append('<p></p>,<p></p>')
-              $('')
+              $('body ul li').append('<p></p>,<p></p>');
+              $('body ul li p:eq(0)').append('<span></span>, <b></b>');
+              $('body ul li p:eq(0) span').text(id + ' -');
+              $('body ul li p:eq(0) b').text(title);
+
+              $('body ul li p:eq(1)').text(snippet);
             }
 
             function queryWikipedia(search) {
