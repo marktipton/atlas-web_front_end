@@ -15,6 +15,10 @@
             function createSearchForm() {
               const submit = $('<input type="submit">');
               $('body').append('<input type="text">', submit,'<ul></ul>');
+
+              submit.click(function () {
+                queryWikipedia($('input[type="text"]'.val()));
+              });
             }
 
             function addNewArticle(id, title, snippet) {
