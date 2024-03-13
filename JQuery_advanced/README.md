@@ -7,11 +7,23 @@
 #### DOM manipulation
 
 - Using jQuery, elements can be selected by
-  - tag name: $('p');
+  - tag name: $('p')
+  - class: $('.className')
+  - id: $('idName')
+  - attribute: $('[name="username"]')
 
 #### Modifying elements
 
+- Content can be modified by selecting the desired element and then using key words to target the html, text, attributes, styles, etc. of the element
+  - $('#imageName').attr('src', 'newImage.jpg');
+  - $('#elementName').text('New text content');
+  - $('#elementName').html('New HTML content');
+
 #### Add elements with different positions
+
+- elements can be added by appending them
+  - $('#contentID').append('insert html here')
+  - $('#contentToBeRemoved').remove();
 
 #### Click Handlers
 
