@@ -48,6 +48,10 @@
 
             function replaceFamilyTree() {
               $('table tbody *:not(tbody:first-child)').remove();
+              $('tbody').append('<tr></tr>');
+              $('tbody tr:last').append('<td></td>,<td></td>');
+              $('tbody tr:last td:eq(0)').text('Gerard');
+              $('tbody tr:last td:eq(1)').text('Bonissa');
             }
 
             createFamilyTree();
