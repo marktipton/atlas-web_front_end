@@ -67,6 +67,9 @@
 
               $('body').prepend(input1, input2, select, submit);
 
+              submit.click(function() {
+                addNewMember(input1.val(), input2.val(), select.val());
+              });
             }
 
             createFamilyTree();
