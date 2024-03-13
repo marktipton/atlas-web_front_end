@@ -32,6 +32,9 @@
               $('tbody tr:last td:eq(1)').text(lastName);
               $('tbody tr:last td:eq(2)').text('(x)');
               $('tbody tr:last td:eq(2)').css('background-color', 'orange');
+              $('tbody tr:last td:eq(2)').click(function() {
+                $('tbody tr:last').remove();
+              });
 
 
             }
