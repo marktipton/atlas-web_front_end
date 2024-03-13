@@ -50,6 +50,13 @@
                 });
               }
 
+              function createForm() {
+                const input1 = $('<input type="text"></input>');
+                const input2 = $('<input type="text"></input>');
+
+                $('body').prepend('<input></input>');
+              }
+
             }
 
             createFamilyTree();
