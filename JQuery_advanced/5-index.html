@@ -33,7 +33,7 @@
               $('tbody tr:last td:eq(2)').text('(x)');
               $('tbody tr:last td:eq(2)').css('background-color', 'orange');
               $('tbody tr:last td:eq(2)').click(function() {
-                $('tbody tr:last').remove();
+                $(this).closest('tr').remove();
               });
 
 
