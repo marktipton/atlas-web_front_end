@@ -47,10 +47,11 @@
             }
 
             function replaceFamilyTree() {
-
+              $('table tbody *:not(tbody:first-child)').remove();
             }
 
             createFamilyTree();
+            replaceFamilyTree();
           });
         </script>
     </head>
