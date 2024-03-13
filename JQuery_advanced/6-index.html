@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+    <head>
+
+        <meta charset="utf-8" />
+        <title>Task 0</title>
+        <script
+        src="https://code.jquery.com/jquery-3.7.1.slim.min.js"
+        integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8="
+        crossorigin="anonymous">
+        </script>
+        <script type="application/javascript">
+          $(document).ready(function() {
+            function createFamilyTree () {
+              $('body').append('<table></table>');
+
+              // table header
+              $('table').append('<thead></thead>')
+              $('thead').append('<tr></tr>');
+              $('thead tr:last').append('<th></th>,<th></th>');
+              $('thead tr:last th:eq(0)').text('Firstname');
+              $('thead tr:last th:eq(1)').text('Lastname');
+
+              $('table').append('<tbody></tbody')
+            }
+
+            function addNewMember(firstName, lastName, position) {
+
+              if (position === 'before') {
+                $('tbody').prepend('<tr></tr>');
+                $('tbody tr:first').prepend('<td></td>,<td></td>,<td></td>');
+                $('tbody tr:first td:eq(0)').text(firstName);
+                $('tbody tr:first td:eq(1)').text(lastName);
+                $('tbody tr:first td:eq(2)').text('(x)');
+                $('tbody tr:first td:eq(2)').css('background-color', 'orange');
+                $('tbody tr:first td:eq(2)').click(function() {
+                  $(this).closest('tr').remove();
+                });
+              } else {
+                $('tbody').append('<tr></tr>');
+                $('tbody tr:last').append('<td></td>,<td></td>,<td></td>');
+
+                $('tbody tr:last td:eq(0)').text(firstName);
+                $('tbody tr:last td:eq(1)').text(lastName);
+                $('tbody tr:last td:eq(2)').text('(x)');
+                $('tbody tr:last td:eq(2)').css('background-color', 'orange');
+                $('tbody tr:last td:eq(2)').click(function() {
+                  $(this).closest('tr').remove();
+                });
+              }
+
+            }
+
+            createFamilyTree();
+            addNewMember('Guillaume', 'Salva');
+            addNewMember('Arielle', 'Snizt');
+            addNewMember('Fanette', 'Snizt');
+            addNewMember('Gerard', 'Snizt');
+            addNewMember('Victor', 'Salva', 'before');
+          });
+        </script>
+    </head>
+
+    <body>
+
+    </body>
+
+</html>
