@@ -15,9 +15,17 @@
             function createFamilyTree () {
               $('body').append('<table></table>');
 
+              // table header
               $('table').append('<tr></tr>');
               $('table tr:last').append('<th></th>,<th></th>');
-              $('table tr:last th:eq(0)').text('Firstname')
+              $('table tr:last th:eq(0)').text('Firstname');
+              $('table tr:last th:eq(1)').text('Lastname');
+
+              // first row
+              $('table').append('<tr></tr>');
+              $('table tr:last').append('<td></td>,<td></td>');
+              $('table tr:last td:eq(0)').text('Guillaume');
+              $('table tr:last td:eq(1)').text('Salva');
 
             }
 
