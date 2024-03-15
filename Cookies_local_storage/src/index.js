@@ -16,7 +16,9 @@ function showCookies() {
   cookies.forEach(function(cookie) {
     var paragraph = document.createElement('p');
 
-    paragraph.innerHTML = 'Cookies: ' + cookie.trim();
+    const email = getCookies('email');
+    const firstName = getCookies('firstname');
+    paragraph.innerHTML = 'Email: ' + email + ' - Firstname: ' +  firstName;
     document.body.appendChild(paragraph);
   });
 }
