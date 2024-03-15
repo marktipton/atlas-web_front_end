@@ -45,16 +45,17 @@
                   origin: location.origin
               };
 
-              const params = new URLSearchParams(data).toString();
+              const queryUrl = url + '?' + $.param(data);
 
-              fetch(`${url}?${params}`)
-                  .then(function(response){return response.json();})
-                  .then(function(response) {
-                    response.query.search.forEach(function(result) {
-                      addNewArticle(result.pageid, result.title, result.snippet);
-                    });
-                  })
-                  .catch(function(error){console.log(error);});
+              window.processData = function(data) {
+                response.query.search.forEach(function(result) {
+                  addNewArticle(result.pageid, result.title, result.snippet);
+                });
+              };
+
+              const script = document.createElement('script');
+              script.src = queryUrl;
+              document.body.appendChild(script);
             }
 
             createSearchForm();
