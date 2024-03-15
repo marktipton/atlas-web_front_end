@@ -14,10 +14,12 @@
           $(document).ready(function() {
             function createSearchForm() {
               const submit = $('<input type="submit">');
-              $('body').append('<input type="text">', submit,'<ul></ul>');
+              const input = $('<input type="text">');
+              const ul = $('<ul></ul>');
+              $('body').append(input, submit, ul);
 
               submit.click(function () {
-                queryWikipedia($('input[type="text"]'.val()));
+                queryWikipedia(input.val());
               });
             }
 
