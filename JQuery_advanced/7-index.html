@@ -12,7 +12,7 @@
           $(document).ready(function() {
             function createSearchForm() {
               const submit = $('<input type="submit">');
-              const input = $('<input type="text">');
+              const input = $('<input type="text" id="textBox" autocomplete="off">');
               const ul = $('<ul></ul>');
               $('body').append(input, submit, ul);
 
