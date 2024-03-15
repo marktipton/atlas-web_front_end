@@ -12,9 +12,9 @@ function setCookies() {
 
 function showCookies() {
   var cookies = document.cookie.split(';');
+  var paragraph = document.createElement('p');
 
   cookies.forEach(function(cookie) {
-    var paragraph = document.createElement('p');
 
     const email = getCookies('email');
     const firstName = getCookies('firstname');
