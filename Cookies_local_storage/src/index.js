@@ -2,8 +2,12 @@ function setCookies() {
   var firstNameInput = document.getElementById('firstname').value;
   var emailInput = document.getElementById('email').value;
 
-  document.cookie = 'firstname=' + firstNameInput + '; path=/;';
-  document.cookie = 'email=' + emailInput + '; path=/;';
+  var now = new Date();
+  now.setDate(now.getDate() + 10);
+
+  var expireUTC = now.toUTCString();
+  document.cookie = 'firstname=' + firstNameInput + '; expires=' + expireUTC +'; path=/;';
+  document.cookie = 'email=' + emailInput + '; expires='+ expireUTC +'; path=/;';
 }
 
 function showCookies() {
