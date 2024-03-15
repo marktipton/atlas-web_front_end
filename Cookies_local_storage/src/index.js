@@ -36,6 +36,22 @@ function getCookies(name) {
   return null;
 }
 
+function showForm() {
+
+}
+
+function hideForm() {
+
+}
+
+function deleteCookiesAndShowForm() {
+
+}
+
+function showWelcomeMessageOrForm() {
+
+}
+
 document.getElementById('logInButton').addEventListener('click', function() {
   setCookies();
 });
