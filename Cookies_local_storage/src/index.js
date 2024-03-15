@@ -21,6 +21,19 @@ function showCookies() {
   });
 }
 
+function getCookies(name) {
+  var cookies = document.cookie.split(';');
+
+  for (let i = 0; i < cookies.length; i++) {
+    let cookie = cookies[i].trim();
+
+    if (cookie.startsWith(name + '=')) {
+      return decodeURIComponent(cookie.substring(name.length + 1));
+    }
+  }
+  return null;
+}
+
 document.getElementById('logInButton').addEventListener('click', function() {
   setCookies();
 });
