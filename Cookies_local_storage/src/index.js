@@ -8,6 +8,8 @@ function setCookies() {
   var expireUTC = now.toUTCString();
   document.cookie = 'firstname=' + firstNameInput + '; expires=' + expireUTC +'; path=/;';
   document.cookie = 'email=' + emailInput + '; expires='+ expireUTC +'; path=/;';
+
+  showWelcomeMessageOrForm();
 }
 
 function showCookies() {
@@ -37,6 +39,7 @@ function getCookies(name) {
 }
 
 function showForm() {
+  // remove welcome message and show form
 
 }
 
