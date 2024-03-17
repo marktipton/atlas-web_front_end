@@ -40,7 +40,8 @@ function getCookies(name) {
 
 function showForm() {
   // remove welcome message and show form
-
+  document.getElementById('loginForm').style.display = 'block';
+  document.getElementById('welcomeMessage')
 }
 
 function hideForm() {
@@ -52,7 +53,14 @@ function deleteCookiesAndShowForm() {
 }
 
 function showWelcomeMessageOrForm() {
+  const email = getCookies('email');
+  const firstName = getCookies('firstname');
+  const body = document.body;
 
+  if (firstName && email) {
+    const welcomeMessage = document.createElement('h1');
+    welcomeMessage.textContent = 'Welcome' + firstName + ' ';
+  }
 }
 
 document.getElementById('logInButton').addEventListener('click', function() {
