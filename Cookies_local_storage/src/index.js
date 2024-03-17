@@ -60,6 +60,13 @@ function showWelcomeMessageOrForm() {
   if (firstName && email) {
     const welcomeMessage = document.createElement('h1');
     welcomeMessage.textContent = 'Welcome' + firstName + ' ';
+
+    const logoutLink = document.createElement('a');
+    logoutLink.textContent = '(logout)';
+    logoutLink.style.fontStyle = 'italic';
+    logoutLink.style.fontWeight = 'normal';
+    logoutLink.style.marginLeft = '10px';
+    logoutLink.href = '#';
   }
 }
 
