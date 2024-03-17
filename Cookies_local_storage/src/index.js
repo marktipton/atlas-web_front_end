@@ -67,6 +67,16 @@ function showWelcomeMessageOrForm() {
     logoutLink.style.fontWeight = 'normal';
     logoutLink.style.marginLeft = '10px';
     logoutLink.href = '#';
+    logoutLink.addEventListener('click', function() {
+      deleteCookiesAndShowForm();
+      hideForm();
+    });
+
+    welcomeMessage.appendChild(logoutLink);
+    body.innerHTML = '';
+    body.appendChild(welcomeMessage);
+  } else {
+    showForm();
   }
 }
 
