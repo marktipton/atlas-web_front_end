@@ -59,7 +59,7 @@ function showWelcomeMessageOrForm() {
 
   if (firstName && email) {
     const welcomeMessage = document.createElement('h1');
-    welcomeMessage.textContent = 'Welcome' + firstName + ' ';
+    welcomeMessage.textContent = 'Welcome ' + firstName + ' ';
 
     const logoutLink = document.createElement('a');
     logoutLink.textContent = '(logout)';
