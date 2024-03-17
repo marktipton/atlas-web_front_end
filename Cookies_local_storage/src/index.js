@@ -40,11 +40,13 @@ function getCookies(name) {
 
 function showForm() {
   // remove welcome message and show form
-  document.getElementById('loginForm').style.display = 'block';
+  const loginForm = document.getElementById('loginForm');
+  loginForm.style.display = 'block';
 }
 
 function hideForm() {
-  document.getElementById('loginForm').style.display = 'none';
+  const loginForm = document.getElementById('loginForm');
+  loginForm.style.display = 'none';
 }
 
 function deleteCookiesAndShowForm() {
@@ -70,6 +72,7 @@ function showWelcomeMessageOrForm() {
     logoutLink.style.marginLeft = '10px';
     logoutLink.href = '#';
     logoutLink.addEventListener('click', function() {
+      event.preventDefault();
       deleteCookiesAndShowForm();
       hideForm();
     });
