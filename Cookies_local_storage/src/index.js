@@ -41,11 +41,10 @@ function getCookies(name) {
 function showForm() {
   // remove welcome message and show form
   document.getElementById('loginForm').style.display = 'block';
-  document.getElementById('welcomeMessage')
 }
 
 function hideForm() {
-
+  document.getElementById('loginForm').style.display = 'none';
 }
 
 function deleteCookiesAndShowForm() {
