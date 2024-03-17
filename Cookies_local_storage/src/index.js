@@ -48,7 +48,10 @@ function hideForm() {
 }
 
 function deleteCookiesAndShowForm() {
+  document.cookie = 'firstname=; expires=Tue, 01 June 1995 06:00:00 UTC; path=/;';
+  document.cookie = 'email=; expires=Tue, 01 June 1995 06:00:00 UTC; path=/;';
 
+  showForm();
 }
 
 function showWelcomeMessageOrForm() {
