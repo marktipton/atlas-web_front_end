@@ -39,7 +39,7 @@
               $('#searchResults').append(li);
             }
 
-            function queryWikipedia(search) {
+            function queryWikipedia(search, offset = 0) {
               $.ajax({
                 url: "https://en.wikipedia.org/w/api.php",
                 data: {
