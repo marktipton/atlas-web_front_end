@@ -46,16 +46,22 @@
                   action: 'query',
                   list: 'search',
                   srsearch: search,
-                  format: 'json'
+                  format: 'json',
+                  offset: offset
                 },
                 dataType: 'jsonp',
                 success: function(response) {
                   let results = response.query.search;
+                  buildPagination(response.query.totalhits, 10, offset);
                   for (let i = 0; i < results.length; i++) {
                     addNewArticle(results[i].pageid, results[i].title, results[i].snippet);
                   }
                 }
               });
+
+              function buildPagination(numberOfItems, itemsPerPage, currentOffset) {
+
+              }
             }
           $(document).ready(function() {
             createSearchForm();
