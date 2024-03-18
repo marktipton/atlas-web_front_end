@@ -1,101 +1,103 @@
+document.addEventListener("DOMContentLoaded", function() {
+  function setCookies() {
+    var firstNameInput = document.getElementById('firstname').value;
+    var emailInput = document.getElementById('email').value;
 
+    var now = new Date();
+    now.setDate(now.getDate() + 10);
 
-function setCookies() {
-  var firstNameInput = document.getElementById('firstname').value;
-  var emailInput = document.getElementById('email').value;
+    var expireUTC = now.toUTCString();
+    document.cookie = 'firstname=' + firstNameInput + '; expires=' + expireUTC +'; path=/;';
+    document.cookie = 'email=' + emailInput + '; expires='+ expireUTC +'; path=/;';
 
-  var now = new Date();
-  now.setDate(now.getDate() + 10);
+    showWelcomeMessageOrForm();
+  }
 
-  var expireUTC = now.toUTCString();
-  document.cookie = 'firstname=' + firstNameInput + '; expires=' + expireUTC +'; path=/;';
-  document.cookie = 'email=' + emailInput + '; expires='+ expireUTC +'; path=/;';
+  function showCookies() {
+    var cookies = document.cookie.split(';');
+    var paragraph = document.createElement('p');
 
-  showWelcomeMessageOrForm();
-}
+    cookies.forEach(function(cookie) {
 
-function showCookies() {
-  var cookies = document.cookie.split(';');
-  var paragraph = document.createElement('p');
+      const email = getCookies('email');
+      const firstName = getCookies('firstname');
+      paragraph.innerHTML = 'Email: ' + email + ' - Firstname: ' +  firstName;
+      document.body.appendChild(paragraph);
+    });
+  }
 
-  cookies.forEach(function(cookie) {
+  function getCookies(name) {
+    var cookies = document.cookie.split(';');
 
-    const email = getCookies('email');
-    const firstName = getCookies('firstname');
-    paragraph.innerHTML = 'Email: ' + email + ' - Firstname: ' +  firstName;
-    document.body.appendChild(paragraph);
-  });
-}
+    for (let i = 0; i < cookies.length; i++) {
+      let cookie = cookies[i].trim();
 
-function getCookies(name) {
-  var cookies = document.cookie.split(';');
+      if (cookie.startsWith(name + '=')) {
+        return decodeURIComponent(cookie.substring(name.length + 1));
+      }
+    }
+    // return null;
+  }
 
-  for (let i = 0; i < cookies.length; i++) {
-    let cookie = cookies[i].trim();
+  function showForm() {
+    // remove welcome message and show form
+    const loginForm = document.querySelector('#loginForm');
+    if (loginForm) {
 
-    if (cookie.startsWith(name + '=')) {
-      return decodeURIComponent(cookie.substring(name.length + 1));
+      loginForm.style.display = 'block';
+    } else {
+      console.error('element not found');
     }
   }
-  return null;
-}
 
-function showForm() {
-  // remove welcome message and show form
-  const loginForm = document.querySelector('#loginForm');
-  if (loginForm) {
-
-    loginForm.style.display = 'block';
-  } else {
-    console.error('element not found');
+  function hideForm() {
+    const loginForm = document.getElementById('loginForm');
+    loginForm.style.display = 'none';
   }
-}
 
-function hideForm() {
-  const loginForm = document.getElementById('loginForm');
-  loginForm.style.display = 'none';
-}
+  function deleteCookiesAndShowForm() {
+    document.cookie = 'firstname=; expires=Tue, 01 June 1995 06:00:00 UTC; path=/;';
+    document.cookie = 'email=; expires=Tue, 01 June 1995 06:00:00 UTC; path=/;';
 
-function deleteCookiesAndShowForm() {
-  document.cookie = 'firstname=; expires=Tue, 01 June 1995 06:00:00 UTC; path=/;';
-  document.cookie = 'email=; expires=Tue, 01 June 1995 06:00:00 UTC; path=/;';
-
-  showForm();
-}
-
-function showWelcomeMessageOrForm() {
-  const email = getCookies('email');
-  const firstName = getCookies('firstname');
-  const body = document.body;
-
-  if (firstName && email) {
-    const welcomeMessage = document.createElement('h1');
-    welcomeMessage.textContent = 'Welcome ' + firstName + ' ';
-
-    const logoutLink = document.createElement('a');
-    logoutLink.textContent = '(logout)';
-    logoutLink.style.fontStyle = 'italic';
-    logoutLink.style.fontWeight = 'normal';
-    logoutLink.style.marginLeft = '10px';
-    logoutLink.href = '#';
-    logoutLink.addEventListener('click', function() {
-      event.preventDefault();
-      deleteCookiesAndShowForm();
-      hideForm();
-    });
-
-    welcomeMessage.appendChild(logoutLink);
-    body.innerHTML = '';
-    body.appendChild(welcomeMessage);
-  } else {
     showForm();
   }
-}
 
-document.getElementById('logInButton').addEventListener('click', function() {
-  setCookies();
+  function showWelcomeMessageOrForm() {
+    const email = getCookies('email');
+    const firstName = getCookies('firstname');
+    const body = document.body;
+
+    if (firstName && email) {
+      const welcomeMessage = document.createElement('h1');
+      welcomeMessage.textContent = 'Welcome ' + firstName + ' ';
+
+      const logoutLink = document.createElement('a');
+      logoutLink.textContent = '(logout)';
+      logoutLink.style.fontStyle = 'italic';
+      logoutLink.style.fontWeight = 'normal';
+      logoutLink.style.marginLeft = '10px';
+      logoutLink.href = '#';
+      logoutLink.addEventListener('click', function() {
+        event.preventDefault();
+        deleteCookiesAndShowForm();
+        hideForm();
+      });
+
+      welcomeMessage.appendChild(logoutLink);
+      body.innerHTML = '';
+      body.appendChild(welcomeMessage);
+    } else {
+      showForm();
+    }
+  }
+
+  document.getElementById('logInButton').addEventListener('click', function() {
+    setCookies();
+  });
+
+  document.getElementById('showCookiesButton').addEventListener('click', function() {
+    showCookies();
+  });
+
 });
 
-document.getElementById('showCookiesButton').addEventListener('click', function() {
-  showCookies();
-});
