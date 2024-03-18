@@ -16,18 +16,19 @@
               'type': 'submit',
               'value': 'Search'
             });
-              const ul = $('<ul>').attr('id', 'searchResults');
+            const ul = $('<ul>').attr('id', 'searchResults');
+            const li = $('<li>').attr('id', 'pagination');
+            form.append(input).append(submit);
+            ul.append(li);
+            $('body').append(form).append(ul);
 
-                form.append(input).append(submit);
-                $('body').append(form).append(ul);
-
-                form.submit(function(a) {
-                  a.preventDefault();
-                  const searchInput = input.val();
-                  $('#searchResults').empty();
-                  queryWikipedia(searchInput);
-                });
-              }
+              form.submit(function(a) {
+                a.preventDefault();
+                const searchInput = input.val();
+                $('#searchResults').empty();
+                queryWikipedia(searchInput);
+              });
+            }
 
             function addNewArticle(id, title, snippet) {
               const li = $('<li/>');
