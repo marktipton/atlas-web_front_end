@@ -17,10 +17,10 @@
               'value': 'Search'
             });
             const ul = $('<ul>').attr('id', 'searchResults');
-            const li = $('<li>').attr('id', 'pagination');
+            const ul2 = $('<li>').attr('id', 'pagination');
             form.append(input).append(submit);
-            ul.append(li);
-            $('body').append(form).append(ul);
+
+            $('body').append(form).append(ul).append(ul2);
 
               form.submit(function(a) {
                 a.preventDefault();
@@ -60,7 +60,7 @@
               });
 
               function buildPagination(numberOfItems, itemsPerPage, currentOffset) {
-                let totalPages = Math.ceil(totalItems / itemsPerPage);
+                let totalPages = Math.ceil(numberOfItems / itemsPerPage);
                 const paginationList = $('#pagination');
                 paginationList.empty();
 
