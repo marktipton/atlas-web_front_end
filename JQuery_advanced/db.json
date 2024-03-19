@@ -1,11 +1,6 @@
 {
   "posts": [
     {
-      "id": "1",
-      "title": "json-server",
-      "author": "typicode"
-    },
-    {
       "title": "fd",
       "author": "fffff",
       "id": "2"
@@ -51,37 +46,7 @@
       "id": "10"
     },
     {
-      "id": "de95",
-      "author": "hello",
-      "title": "there"
-    },
-    {
       "id": "a478",
-      "author": "",
-      "title": ""
-    },
-    {
-      "id": "a202",
-      "author": "",
-      "title": ""
-    },
-    {
-      "id": "7299",
-      "author": "",
-      "title": ""
-    },
-    {
-      "id": "9cb8",
-      "author": "",
-      "title": ""
-    },
-    {
-      "id": "f484",
-      "author": "",
-      "title": ""
-    },
-    {
-      "id": "0a79",
       "author": "",
       "title": ""
     },
