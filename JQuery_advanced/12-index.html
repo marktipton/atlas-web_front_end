@@ -17,8 +17,10 @@
       <script type="application/javascript">
         function addPostRow(data) {
           const p = $('<p/>').append('<span/>').text('Post created with id ' + data.id + ' title: ' + data.title + ', author: ' + data.author);
-          p.attr('id', 'row-ID');
-          p.prepend($('<span>').text('(delete)'));
+          p.attr('id', 'row-' + data.id);
+          p.prepend($('<span>').text('(delete)').click(function() {
+            deletePost(data.id);
+          }));
           $('body').append(p);
         }
 
