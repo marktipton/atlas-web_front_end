@@ -62,22 +62,24 @@
 
             function buildPagination(numberOfItems, itemsPerPage, currentOffset) {
               let totalPages = Math.ceil(numberOfItems / itemsPerPage);
-              const paginationList = $('#pagination');
-              paginationList.empty();
+              // let paginationList = $('#pagination');
+              // paginationList.empty();
 
               for (let i = 0; i < totalPages; i++) {
-                const listItem = $('<li/>').text(i + 1);
-                if ((i * itemsPerPage) === currentOffset) {
-                  listItem.css('font-weight', 'bold');
-                }
-                listItem.css({
-                  'cursor': 'pointer',
-                  'margin-left': '10px'
-                }).on('click', function() {
-                  let offset = ($(this).text() * itemsPerPage) - itemsPerPage;
-                  queryWikipedia($('#searchText').val(), offset);
-                });
-                paginationList.append(listItem);
+                let listItem = $('<li>');
+                let pageNumber = $(i + 1);
+                listItem.append(pageNumber);
+                // if ((i * itemsPerPage) === currentOffset) {
+                //   listItem.css('font-weight', 'bold');
+                // }
+                // listItem.css({
+                //   'cursor': 'pointer',
+                //   'margin-left': '10px'
+                // }).on('click', function() {
+                //   let offset = ($(this).text() * itemsPerPage) - itemsPerPage;
+                //   queryWikipedia($('#searchText').val(), offset);
+                // });
+                $('#pagination').append(listItem);
               }
             }
           $(document).ready(function() {
