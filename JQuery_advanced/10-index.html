@@ -4,7 +4,7 @@
     <head>
 
         <meta charset="utf-8" />
-        <title>Task 9</title>
+        <title>Task 10</title>
         <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 
     </head>
@@ -16,25 +16,23 @@
 
       <script type="application/javascript">
         function addPostRow(data) {
-          const p = $('<p/>');
-          p.html('Post created with id <span>' + data.id + '</span>, title: <span>' + data.title + '</span>, author: <span>' + data.author + '</span>');
+          const p = $('<p/>').append('<span/>').text('Post created with id' + data.id + 'title: ' + data.title + ', author: ' + data.author);
           $('body').append(p);
         }
 
         function listPosts() {
-          $.ajax({
-            url: '/posts',
-            type: 'GET',
-            success: function (response) {
-              response.array.forEach(function(post) {
+          $.get('http://localhost:3000/posts', function (response) {
+            if (response) {
+              response.forEach(function (post) {
                 addPostRow(post);
               });
-            },
-            error: function() {
+            } else {
               alert('Server Error');
             }
           });
-        }
+
+
+
 
         $(document).ready(function() {
           listPosts();
