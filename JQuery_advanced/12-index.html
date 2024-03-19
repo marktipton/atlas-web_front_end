@@ -91,7 +91,16 @@
         }
 
         function deletePost(id) {
-          $.remove()
+          $.ajax({
+            url: 'http://localhost:3000/posts/' + id,
+            type: 'DELETE',
+            success: function() {
+              $('#row-' + id).remove();
+            },
+            error: function() {
+              alert('Post was not deleted');
+            }
+          });
         }
 
         $(document).ready(function() {
