@@ -33,7 +33,21 @@
         }
 
         function buildForm() {
-          $('body').append('<form>');
+          const div1 = $('<div/>');
+          div1.append('<label>').attr('for', 'author').text('Author');
+          div1.append('<input>').attr({
+            'type': 'text',
+            'id': 'author'
+          });
+          const div2 = $('<div/>');
+          div1.append('<label>')
+          const submitButton = $('<input>').attr({
+            'type': 'submit',
+            'value': 'Submit'
+          });
+
+          $('body').append('<form>').append(div1, div2, submitButton);
+
         }
 
         function sendForm() {
@@ -42,6 +56,7 @@
 
         $(document).ready(function() {
           listPosts();
+          buildForm();
         });
       </script>
     </body>
