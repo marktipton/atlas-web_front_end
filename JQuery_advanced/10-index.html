@@ -15,8 +15,10 @@
       </header>
 
       <script type="application/javascript">
-        function addPostRow() {
-
+        function addPostRow(data) {
+          const p = $('<p/>');
+          p.html('Post created with id <span>' + data.id + '</span>, title: <span>' + data.title + '</span>, author: <span>' + data.author + '</span>');
+          $('body').append(p);
         }
 
         function listPosts() {
