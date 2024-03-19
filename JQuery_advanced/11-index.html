@@ -40,18 +40,19 @@
               'id': 'author'
             })
           );
-          const div2 = $('<div/>');
-          div2.append('<label>').attr('for', 'title').text('Title');
-          div2.append('<textarea>').attr('id', 'title');
+          const div2 = $('<div/>').append(
+            $('<label>').attr('for', 'title').text('Title'),
+            div2.append('<textarea>').attr('id', 'title')
+          );
 
           const submitButton = $('<input>').attr({
             'type': 'submit',
             'value': 'Submit'
           });
 
-          const form = $('<form>');
+          const form = $('<form>').append(div1, div2, submitButton);
 
-          $('body').form.append(div1, div2, submitButton);
+          $('body').append(form);
 
           form.submit(function (eventObject) {
             eventObject.preventDefault();
