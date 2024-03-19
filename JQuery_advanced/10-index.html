@@ -22,7 +22,18 @@
         }
 
         function listPosts() {
-
+          $.ajax({
+            url: '/posts',
+            type: 'GET',
+            success: function (response) {
+              response.array.forEach(function(post) {
+                addPostRow(post);
+              });
+            },
+            error: function() {
+              alert('Server Error');
+            }
+          });
         }
 
         $(document).ready(function() {
