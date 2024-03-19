@@ -15,6 +15,7 @@
 
     <body>
       <header>
+
       </header>
 
       <script type="application/javascript">
@@ -97,6 +98,16 @@
               $('#pagination').append(listItem);
             }
           }
+
+          function displayLoading(loading) {
+            const ulFirst = $('ul:first');
+            if (loading) {
+              ulFirst.wrap('<div class="loading"></div>');
+            } else {
+              ulFirst.unwrap();
+            }
+          }
+
         $(document).ready(function() {
           createSearchForm();
         });
