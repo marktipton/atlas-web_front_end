@@ -65,7 +65,11 @@
           const author = $('#author').val();
           const title = $('#title').val();
 
-          $.post('http://localhost:3000/posts', {author: author, title: title})
+          $('form').after('<p>About to send the query to the API</p>');
+          $.post('http://localhost:3000/posts', {
+            author: author,
+            title: title
+          })
             .done(function (data) {
               console.log('Post created:', data);
               listPosts();
