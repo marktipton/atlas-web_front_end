@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+    <head>
+
+        <meta charset="utf-8" />
+        <title>Task 11</title>
+        <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+    </head>
+
+    <body>
+      <header>
+
+      </header>
+
+      <script type="application/javascript">
+        function addPostRow(data) {
+          const p = $('<p/>').append('<span/>').text('Post created with id ' + data.id + ' title: ' + data.title + ', author: ' + data.author);
+          $('body').append(p);
+        }
+
+        function listPosts() {
+          $.get('http://localhost:3000/posts', function (response) {
+            if (response) {
+              response.forEach(function (post) {
+                addPostRow(post);
+              });
+            } else {
+              alert('Server Error');
+            }
+          });
+        }
+
+        function buildForm() {
+          $('body').append('<form>');
+        }
+
+        function sendForm() {
+
+        }
+
+        $(document).ready(function() {
+          listPosts();
+        });
+      </script>
+    </body>
+
+</html>
