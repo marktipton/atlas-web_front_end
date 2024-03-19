@@ -4,7 +4,7 @@
     <head>
 
         <meta charset="utf-8" />
-        <title>Task 0</title>
+        <title>Task 8</title>
         <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
         <script type="application/javascript">
           function createSearchForm() {
@@ -62,15 +62,16 @@
             }
 
             function buildPagination(numberOfItems, itemsPerPage, currentOffset) {
-              console.log(numberOfItems);
-              console.log(itemsPerPage);
-              console.log(currentOffset);
+              // console.log(numberOfItems);
+              // console.log(itemsPerPage);
+              // console.log(currentOffset);
               let totalPages = Math.ceil(numberOfItems / itemsPerPage);
-              console.log(totalPages);
+              // console.log(totalPages);
               let paginationList = $('#pagination');
               paginationList.empty();
 
               for (let i = 0; i < totalPages; i++) {
+                const pageNumber = i + 1;
                 let listItem = $('<li/>').text(i + 1);
                 if ((i * itemsPerPage) === currentOffset) {
                   listItem.css('font-weight', 'bold');
@@ -79,8 +80,8 @@
                   'cursor': 'pointer',
                   'margin-left': '10px'
                 }).on('click', function() {
-                  let offset = ($(this).text() * itemsPerPage) - itemsPerPage;
-                  queryWikipedia($('#searchText').val(), offset);
+                  let newOffset = (i * itemsPerPage);
+                  queryWikipedia($('#searchText').val(), newOffset);
                 });
                 $('#pagination').append(listItem);
               }
