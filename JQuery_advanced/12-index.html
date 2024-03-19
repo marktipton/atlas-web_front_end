@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+    <head>
+
+        <meta charset="utf-8" />
+        <title>Task 11</title>
+        <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+    </head>
+
+    <body>
+      <header>
+
+      </header>
+
+      <script type="application/javascript">
+        function addPostRow(data) {
+          const p = $('<p/>').append('<span/>').text('Post created with id ' + data.id + ' title: ' + data.title + ', author: ' + data.author);
+          $('body').append(p);
+        }
+
+        function listPosts() {
+          $.get('http://localhost:3000/posts', function (response) {
+            if (response) {
+              response.forEach(function (post) {
+                addPostRow(post);
+              });
+            } else {
+              alert('Server Error');
+            }
+          });
+        }
+
+        function buildForm() {
+          const div1 = $('<div/>').append(
+            $('<label>').attr('for', 'author').text('Author'),
+            $('<input>').attr({
+              'type': 'text',
+              'id': 'author'
+            })
+          );
+          const div2 = $('<div/>').append(
+            $('<label>').attr('for', 'title').text('Title'),
+            $('<textarea>').attr('id', 'title')
+          );
+
+          const submitButton = $('<input>').attr({
+            'type': 'submit',
+            'value': 'Submit'
+          });
+
+          const form = $('<form>').append(div1, div2, submitButton);
+
+          $('body').append(form);
+
+          submitButton.click(function(event) {
+            event.preventDefault();
+            form.submit();
+          });
+
+          form.submit(function (eventObject) {
+            eventObject.preventDefault();
+            sendForm();
+          });
+
+        }
+
+        function sendForm() {
+          const author = $('#author').val();
+          const title = $('#title').val();
+
+          $('form').after('<p>About to send the query to the API</p>');
+
+          const data = {
+            author: author,
+            title: title
+          };
+          $.post('http://localhost:3000/posts', JSON.stringify(data))
+            .done(function (data) {
+              console.log('Post created:', data);
+              listPosts();
+            })
+            .fail(function () {
+              alert('Failed to create post');
+            });
+        }
+
+        function deletePost(id) {
+
+        }
+
+        $(document).ready(function() {
+          listPosts();
+          buildForm();
+        });
+      </script>
+    </body>
+
+</html>
