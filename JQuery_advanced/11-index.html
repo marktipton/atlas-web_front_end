@@ -33,20 +33,30 @@
         }
 
         function buildForm() {
-          const div1 = $('<div/>');
-          div1.append('<label>').attr('for', 'author').text('Author');
-          div1.append('<input>').attr({
-            'type': 'text',
-            'id': 'author'
-          });
+          const div1 = $('<div/>').append(
+            $('<label>').attr('for', 'author').text('Author'),
+            $('<input>').attr({
+              'type': 'text',
+              'id': 'author'
+            })
+          );
           const div2 = $('<div/>');
-          div1.append('<label>')
+          div2.append('<label>').attr('for', 'title').text('Title');
+          div2.append('<textarea>').attr('id', 'title');
+
           const submitButton = $('<input>').attr({
             'type': 'submit',
             'value': 'Submit'
           });
 
-          $('body').append('<form>').append(div1, div2, submitButton);
+          const form = $('<form>');
+
+          $('body').form.append(div1, div2, submitButton);
+
+          form.submit(function (eventObject) {
+            eventObject.preventDefault();
+            sendForm();
+          });
 
         }
 
