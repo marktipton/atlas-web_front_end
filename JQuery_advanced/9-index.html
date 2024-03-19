@@ -52,6 +52,7 @@
           }
 
           function queryWikipedia(search, offset = 0) {
+            displayLoading(true);
             $.ajax({
               url: "https://en.wikipedia.org/w/api.php",
               data: {
