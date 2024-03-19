@@ -54,6 +54,11 @@
 
           $('body').append(form);
 
+          submitButton.click(function(event) {
+            event.preventDefault();
+            form.submit();
+          });
+
           form.submit(function (eventObject) {
             eventObject.preventDefault();
             sendForm();
@@ -66,10 +71,12 @@
           const title = $('#title').val();
 
           $('form').after('<p>About to send the query to the API</p>');
-          $.post('http://localhost:3000/posts', {
+
+          const data = {
             author: author,
             title: title
-          })
+          };
+          $.post('http://localhost:3000/posts', JSON.stringify(data))
             .done(function (data) {
               console.log('Post created:', data);
               listPosts();
