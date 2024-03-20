@@ -41,12 +41,16 @@ document.addEventListener("DOMContentLoaded", function() {
 
   function showForm() {
     // remove welcome message and show form
-    const loginForm = document.querySelector('#loginForm');
+    // const loginForm = document.querySelector('#loginForm');
+    let welcomeMessage = document.getElementById('welcomeMessage');
+    if (welcomeMessage) {
+      welcomeMessage.parentNode.removeChild(welcomeMessage);
+    }
+    let loginForm = document.getElementById('loginForm');
     if (loginForm) {
-
       loginForm.style.display = 'block';
     } else {
-      console.error('element not found');
+      console.error('Login form not found');
     }
   }
 
