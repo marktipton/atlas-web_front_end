@@ -5,7 +5,7 @@
 
         <meta charset="utf-8" />
         <title>Task 2</title>
-        <script src="src/index.js" defer></script>
+        <!-- <script src="src/index.js" defer></script> -->
     </head>
 
     <body>
@@ -15,6 +15,51 @@
       <button id="logInButton">Log me in</button>
       <h2>Cookies</h2>
       <button id="showCookiesButton">Show the cookies</button>
+
+      <script>
+        function setCookies() {
+          var firstNameInput = document.getElementById('firstname').value;
+          var emailInput = document.getElementById('email').value;
+          var now = new Date();
+          now.setDate(now.getDate() + 10);
+          var expireUTC = now.toUTCString();
+          document.cookie = 'firstname=' + firstNameInput + '; expires=' + expireUTC +'; path=/;';
+          document.cookie = 'email=' + emailInput + '; expires='+ expireUTC +'; path=/;';
+        }
+
+        function showCookies() {
+          var cookies = document.cookie.split(';');
+          var paragraph = document.createElement('p');
+
+          cookies.forEach(function(cookie) {
+
+            const email = getCookies('email');
+            const firstName = getCookies('firstname');
+            paragraph.innerHTML = 'Email: ' + email + ' - Firstname: ' +  firstName;
+            document.body.appendChild(paragraph);
+          });
+        }
+
+        function getCookies(name) {
+          var cookies = document.cookie.split(';');
+          for (let i = 0; i < cookies.length; i++) {
+            let cookie = cookies[i].trim();
+            if (cookie.startsWith(name + '=')) {
+              return decodeURIComponent(cookie.substring(name.length + 1));
+            }
+          }
+          return null;
+        }
+
+        document.getElementById('logInButton').addEventListener('click', function() {
+          setCookies();
+        });
+
+        document.getElementById('showCookiesButton').addEventListener('click', function() {
+          showCookies();
+        });
+
+      </script>
     </body>
 
 </html>
