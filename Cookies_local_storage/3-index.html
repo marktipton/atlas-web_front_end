@@ -17,6 +17,9 @@
       </div>
       <h2>Cookies</h2>
       <button id="showCookiesButton">Show the cookies</button>
+      <div id="welcomeContainer">
+
+      </div>
 
       <script>
         function setCookies() {
@@ -89,8 +92,10 @@
             });
 
             welcomeMessage.appendChild(logoutLink);
-            document.body.innerHTML = '';
-            document.body.appendChild(welcomeMessage);
+
+            var welcomeContainer = document.getElementById('welcomeContainer');
+            welcomeContainer.innerHTML = '';
+            welcomeContainer.appendChild(welcomeMessage);
           } else {
             showForm();
           }
