@@ -33,16 +33,13 @@
         }
 
         function showCookies() {
-          var cookies = document.cookie.split(';');
+          var email = Cookies.get('email');
+          var firstName = Cookies.get('firstname');
+
           var paragraph = document.createElement('p');
 
-          cookies.forEach(function(cookie) {
-
-            const email = getCookies('email');
-            const firstName = getCookies('firstname');
-            paragraph.innerHTML = 'Email: ' + email + ' - Firstname: ' +  firstName;
-            document.body.appendChild(paragraph);
-          });
+          paragraph.innerHTML = 'Email: ' + email + ' - Firstname: ' +  firstName;
+          document.body.appendChild(paragraph);
         }
 
         function getCookies(name) {
