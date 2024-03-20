@@ -70,8 +70,8 @@
         }
 
         function showWelcomeMessageForm() {
-          var email = getCookies('email');
-          var firstName = getCookies('firstname');
+          var email = Cookies.get('email');
+          var firstName = Cookies.get('firstname');
 
           if (firstName && email) {
             var welcomeMessage = document.createElement('h1');
@@ -96,7 +96,7 @@
         }
 
         document.getElementById('logInButton').addEventListener('click', function() {
-          setCookies();
+          setCookiesAndShowWelcomeMessage();
         });
 
         document.getElementById('showCookiesButton').addEventListener('click', function() {
