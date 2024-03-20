@@ -14,8 +14,8 @@
         <input type="text" id="firstname">
         <input type="text" id="email">
         <button id="logInButton">Log me in</button>
-        <h2>Cookies</h2>
       </div>
+      <h2>Cookies</h2>
       <button id="showCookiesButton">Show the cookies</button>
 
       <script>
@@ -59,7 +59,8 @@
         }
 
         function hideForm(){
-
+          var loginForm = document.getElementById('loginForm');
+          loginForm.style.display = 'none';
         }
 
         function deleteCookiesAndShowForm() {
