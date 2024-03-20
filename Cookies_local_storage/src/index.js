@@ -1,22 +1,25 @@
 function setCookies() {
-  const firstName = document.getElementById('firstname').value;
-  const email = document.getElementById('email').value;
-
-  document.cookie = 'firstname=' + encodeURIComponent(firstName) + '; path=;';
-  document.cookie = 'email=' + encodeURIComponent(email) + '; path=/;';
+  var firstNameInput = document.getElementById('firstname').value;
+  var emailInput = document.getElementById('email').value;
+  document.cookie = 'firstname=' + firstNameInput + '; path=/;';
+  document.cookie = 'email=' + emailInput + '; path=/;';
 }
-
 function showCookies() {
-  const cookiesList = document.getElementById('cookiesList');
-  cookiesList.innerHTML = '';
-  const cookies = document.cookie.split(';');
-  cookies.forEach(function(cookie) {
-    const key = cookie.trim().split('=');
-    const name = key[0];
-    const value = key[1];
+  var cookies = document.cookie.split(';');
 
-    const paragraph = document.createElement('p');
-    paragraph.textContent = 'Cookies: ' + decodeURIComponent(value);
-    cookiesList.appendChild(paragraph);
+  cookies.forEach(function(cookie) {
+    // console.log(cookie.trim());
+    var paragraph = document.createElement('p');
+
+    paragraph.innerHTML = 'Cookies: ' + cookie.trim();
+    document.body.appendChild(paragraph);
   });
 }
+
+document.getElementById('logInButton').addEventListener('click', function() {
+  setCookies();
+});
+
+document.getElementById('showCookiesButton').addEventListener('click', function() {
+  showCookies();
+});
