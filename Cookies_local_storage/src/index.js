@@ -1,6 +1,5 @@
-document.addEventListener("DOMContentLoaded", function() {
-  function setCookies() {
-    var firstNameInput = document.getElementById('firstname').value;
+function setCookies() {
+  var firstNameInput = document.getElementById('firstname').value;
     var emailInput = document.getElementById('email').value;
 
     var now = new Date();
@@ -81,7 +80,7 @@ document.addEventListener("DOMContentLoaded", function() {
       logoutLink.style.fontWeight = 'normal';
       logoutLink.style.marginLeft = '10px';
       logoutLink.href = '#';
-      logoutLink.addEventListener('click', function() {
+      logoutLink.addEventListener('click', function(event) {
         event.preventDefault();
         deleteCookiesAndShowForm();
         hideForm();
@@ -95,6 +94,7 @@ document.addEventListener("DOMContentLoaded", function() {
     }
   }
 
+document.addEventListener("DOMContentLoaded", function() {
   document.getElementById('logInButton').addEventListener('click', function() {
     setCookies();
   });
