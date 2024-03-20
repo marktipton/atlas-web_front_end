@@ -27,6 +27,7 @@
           var expireUTC = now.toUTCString();
           document.cookie = 'firstname=' + firstNameInput + '; expires=' + expireUTC +'; path=/;';
           document.cookie = 'email=' + emailInput + '; expires='+ expireUTC +'; path=/;';
+          showWelcomeMessageForm();
         }
 
         function showCookies() {
