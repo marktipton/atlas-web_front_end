@@ -70,7 +70,29 @@
         }
 
         function showWelcomeMessageForm() {
+          var email = getCookies('email');
+          var firstName = getCookies('firstname');
 
+          if (firstName && email) {
+            var welcomeMessage = document.createElement('h1');
+            welcomeMessage.textContent = 'Welcome ' + firstName + ' ';
+            var logoutLink = document.createElement('a');
+            logoutLink.textContent = '(logout)';
+            logoutLink.style.fontStyle = 'italic';
+            logoutLink.style.fontWeight = 'normal';
+            logoutLink.style.marginLeft = '10px';
+            logoutLink.href = '#';
+            logoutLink.addEventListener('click', function (event) {
+              event.preventDefault();
+              deleteCookiesAndShowForm();
+            });
+
+            welcomeMessage.appendChild(logoutLink);
+            document.body.innerHTML = '';
+            document.body.appendChild(welcomeMessage);
+          } else {
+            showForm();
+          }
         }
 
         document.getElementById('logInButton').addEventListener('click', function() {
