@@ -106,6 +106,12 @@
             }
             cartContainer.appendChild(ul);
           }
+
+          var clearButton = document.createElement('button');
+          clearButton.textContent = 'Clear my cart';
+          clearButton.addEventListener('click', function() {
+            clearCart();
+          });
         }
 
         createStore();
