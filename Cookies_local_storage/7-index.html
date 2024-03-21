@@ -90,12 +90,13 @@
           cartDiv.appendChild(h2);
 
 
-          document.body.appendChild(h2);
           updateCart(cartDiv);
+          // document.body.appendChild(h2);
+          document.body.appendChild(cartDiv);
         }
 
         function updateCart(cartDiv) {
-          cartDiv.innerHTML = '';
+          // cartDiv.innerHTML = '';
           var cart = getCartFromStorage();
           if (Object.keys(cart).length === 0) {
             var empty = document.createElement('p');
@@ -125,7 +126,6 @@
           });
           cartDiv.prepend(clearButton);
 
-          document.body.appendChild(cartDiv);
         }
         if (isSessionStorageSupported()) {
           createStore();
