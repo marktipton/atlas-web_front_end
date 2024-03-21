@@ -44,6 +44,10 @@
           displayCart();
         }
 
+        function removeItemfromCart() {
+
+        }
+
         function clearCart() {
           sessionStorage.removeItem('cart');
           displayCart();
@@ -70,6 +74,9 @@
         }
 
         function displayCart() {
+          var h2 = document.createElement('h2');
+          h2.textContent = 'Your cart:';
+
           var cart = Object.keys(sessionStorage);
           var cartCount = cart.length;
 
@@ -78,6 +85,10 @@
             p.textContent = 'You previously had ' + cartCount + ' items in your cart';
             document.body.appendChild(p);
           }
+        }
+
+        function updateCart() {
+
         }
 
         createStore();
