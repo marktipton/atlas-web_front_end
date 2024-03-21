@@ -50,9 +50,14 @@
         }
 
         function createStore() {
+          var h2 = document.createElement('h2');
+          h2.textContent = 'Available products:'
+          document.body.appendChild(h2);
+
           var ul = document.createElement('ul');
 
           items.forEach(function(item) {
+
             var li = document.createElement('li');
             li.textContent = item;
             li.addEventListener('click', function() {
