@@ -22,13 +22,14 @@
           }
         }
 
+        var items = ['Shampoo', 'Soap', 'Sponge', 'Water'];
+
         function addItemToCart(item) {
           sessionStorage.setItem(item, true);
           displayCart();
         }
 
         function createStore() {
-          var items = ['Shampoo', 'Soap', 'Sponge', 'Water'];
           var ul = document.createElement('ul');
 
           items.forEach(function(item) {
