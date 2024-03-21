@@ -90,6 +90,7 @@
           cartDiv.appendChild(h2);
 
 
+          document.body.appendChild(h2);
           updateCart(cartDiv);
         }
 
@@ -122,7 +123,6 @@
           });
           cartDiv.prepend(clearButton);
 
-          document.body.appendChild(h2);
           document.body.appendChild(cartDiv);
         }
         if (isSessionStorageSupported()) {
