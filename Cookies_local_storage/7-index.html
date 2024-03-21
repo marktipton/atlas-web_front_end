@@ -44,6 +44,11 @@
           displayCart();
         }
 
+        function clearCart() {
+          sessionStorage.removeItem('cart');
+          displayCart();
+        }
+
         function createStore() {
           var ul = document.createElement('ul');
 
