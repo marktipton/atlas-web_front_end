@@ -89,6 +89,13 @@
           if (Object.keys(cart).length === 0) {
             var empty = document.createElement('p');
             empty.textContent = 'Your cart is empty';
+          } else {
+            var ul = document.createElement('ul');
+            for (var item in cart) {
+              var li = document.createElement('li');
+              li.textContent = item + ' x ' + cart[item];
+              var removeButton = document.createElement('button');
+            }
           }
         }
 
