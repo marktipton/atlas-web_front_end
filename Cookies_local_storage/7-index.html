@@ -4,7 +4,7 @@
     <head>
 
         <meta charset="utf-8" />
-        <title>Task 6</title>
+        <title>Task 7</title>
         <!-- <script src="src/index.js" defer></script> -->
     </head>
 
@@ -77,18 +77,28 @@
         }
 
         function displayCart() {
+          var cartDiv = document.getElementById('cart');
+          if (cartDiv) {
+            cartDiv.innerHTML = '';
+          } else {
+            cartDiv = document.createElement('div');
+            cartDiv.setAttribute('id', 'cart');
+            document.body.appendChild(cartDiv);
+          }
           var h2 = document.createElement('h2');
           h2.textContent = 'Your cart:';
-          var cartContainer = document.createElement('div');
+          cartDiv.appendChild(h2);
 
-          updateCart();
+
+          updateCart(cartDiv);
         }
 
-        function updateCart() {
+        function updateCart(cartDiv) {
           var cart = getCartFromStorage();
           if (Object.keys(cart).length === 0) {
             var empty = document.createElement('p');
             empty.textContent = 'Your cart is empty';
+            cartDiv.appendChild(empty);
           } else {
             var ul = document.createElement('ul');
             for (var item in cart) {
@@ -97,10 +107,8 @@
               var removeButton = document.createElement('button');
               removeButton.textContent = 'Remove';
               removeButton.addEventListener('click', (function(item) {
-                return function() {
-                  removeItemfromCart(item);
-                };
-              })(item));
+                  removeItemfromCart(this.dataset.item);
+              });
               li.appendChild(removeButton);
               ul.appendChild(li);
             }
