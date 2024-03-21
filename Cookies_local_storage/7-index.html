@@ -24,6 +24,15 @@
 
         var items = ['Shampoo', 'Soap', 'Sponge', 'Water'];
 
+        function getCartFromStorage() {
+          var cart = sessionStorage.getItem('cart');
+          if (cart) {
+            return JSON.parse(cart);
+          } else {
+            return {};
+          }
+        }
+
         function addItemToCart(item) {
           sessionStorage.setItem(item, true);
           displayCart();
