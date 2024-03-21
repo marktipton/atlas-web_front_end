@@ -117,9 +117,12 @@
           document.body.appendChild(h2);
           document.body.appendChild(cartContainer);
         }
-
-        createStore();
-        displayCart();
+        if (isSessionStorageSupported()) {
+          createStore();
+          displayCart();
+        } else {
+          alert('Sorry, your browser does not support Web storage. Try again with a better one');
+        }
       </script>
     </body>
 
