@@ -95,6 +95,7 @@
         }
 
         function updateCart(cartDiv) {
+          cartDiv.innerHTML = '';
           var cart = getCartFromStorage();
           if (Object.keys(cart).length === 0) {
             var empty = document.createElement('p');
@@ -107,6 +108,7 @@
               li.textContent = item + ' x ' + cart[item];
               var removeButton = document.createElement('button');
               removeButton.textContent = 'Remove';
+              removeButton.dataset.item = item;
               removeButton.addEventListener('click', (function(item) {
                   removeItemfromCart(this.dataset.item);
               }));
