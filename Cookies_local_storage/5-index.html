@@ -36,6 +36,24 @@
 
           document.body.appendChild(ul);
         }
+
+        function displayCart() {
+          var cart = Object.keys(localStorage);
+          var cartCount = cart.length;
+
+          if (cartCount > 0) {
+            var p = document.createElement('p');
+            p.textContent = 'You previously had ' + cartCount + ' items in your cart';
+            document.body.appendChild(p);
+          }
+        }
+
+        if (isLocalStorageSupported()) {
+          createStore();
+          displayCart();
+        } else {
+          alert('Sorry, your browser does not support Web storage. Try again with a better one');
+        }
       </script>
     </body>
 
