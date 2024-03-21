@@ -108,11 +108,11 @@
               removeButton.textContent = 'Remove';
               removeButton.addEventListener('click', (function(item) {
                   removeItemfromCart(this.dataset.item);
-              });
+              }));
               li.appendChild(removeButton);
               ul.appendChild(li);
             }
-            cartContainer.appendChild(ul);
+            cartDiv.appendChild(ul);
           }
 
           var clearButton = document.createElement('button');
@@ -120,10 +120,10 @@
           clearButton.addEventListener('click', function() {
             clearCart();
           });
-          cartContainer.prepend(clearButton);
+          cartDiv.prepend(clearButton);
 
           document.body.appendChild(h2);
-          document.body.appendChild(cartContainer);
+          document.body.appendChild(cartDiv);
         }
         if (isSessionStorageSupported()) {
           createStore();
