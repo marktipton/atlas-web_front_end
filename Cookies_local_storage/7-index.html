@@ -79,7 +79,7 @@
         function displayCart() {
           var h2 = document.createElement('h2');
           h2.textContent = 'Your cart:';
-          var emptyDiv = document.createElement('div');
+          var cartContainer = document.createElement('div');
 
           updateCart();
         }
@@ -104,6 +104,7 @@
               li.appendChild(removeButton);
               ul.appendChild(li);
             }
+            cartContainer.appendChild(ul);
           }
         }
 
