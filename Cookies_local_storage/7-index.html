@@ -95,6 +95,13 @@
               var li = document.createElement('li');
               li.textContent = item + ' x ' + cart[item];
               var removeButton = document.createElement('button');
+              removeButton.textContent = 'Remove';
+              removeButton.addEventListener('click', (function(item) {
+                return function() {
+                  removeItemfromCart(item);
+                };
+              })(item));
+
             }
           }
         }
