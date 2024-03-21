@@ -44,8 +44,11 @@
           displayCart();
         }
 
-        function removeItemfromCart() {
-
+        function removeItemfromCart(item) {
+          var cart = getCartFromStorage();
+          delete cart[item];
+          sessionStorage.setItem('cart', JSON.stringify(cart));
+          displayCart();
         }
 
         function clearCart() {
