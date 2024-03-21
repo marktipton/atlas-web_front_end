@@ -34,7 +34,13 @@
         }
 
         function addItemToCart(item) {
-          sessionStorage.setItem(item, true);
+          var cart = getCartFromStorage();
+          if (cart[item]) {
+            cart[item] += 1;
+          } else {
+            cart[item] = 1
+          }
+          sessionStorage.setItem('cart', JSON.stringify(cart));
           displayCart();
         }
 
