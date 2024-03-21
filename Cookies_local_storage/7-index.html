@@ -79,6 +79,7 @@
         function displayCart() {
           var h2 = document.createElement('h2');
           h2.textContent = 'Your cart:';
+          var emptyDiv = document.createElement('div');
 
           var cart = Object.keys(sessionStorage);
           var cartCount = cart.length;
