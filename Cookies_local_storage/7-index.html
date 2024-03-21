@@ -112,6 +112,10 @@
           clearButton.addEventListener('click', function() {
             clearCart();
           });
+          cartContainer.prepend(clearButton);
+
+          document.body.appendChild(h2);
+          document.body.appendChild(cartContainer);
         }
 
         createStore();
