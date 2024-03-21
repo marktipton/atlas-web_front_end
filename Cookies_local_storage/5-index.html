@@ -20,6 +20,22 @@
             return false;
           }
         }
+
+        function addItemToCart(item) {
+          var items = ['Shampoo', 'Soap', 'Sponge', 'Water'];
+          var ul = document.createElement('ul');
+
+          items.forEach(function(item) {
+            var li = document.createElement('li');
+            li.textContent = item;
+            li.addEventListener('click', function() {
+              addItemToCart(item);
+            });
+            ul.appendChild(li);
+          });
+
+          document.body.appendChild(ul);
+        }
       </script>
     </body>
 
